@@ -1,21 +1,14 @@
 module.exports = function(bh) {
-  bh.match('page__ua', function(ctx) {
-    ctx.bem(false)
-      .tag('script')
-      .attr('data-skip-moving', 'true')
-      .content([
-        '/* beautify preserve:start */',
-        '!function(e,n){function r(){var e={elem:n.createElement("modernizr")' +
-        '}.elem.style;try{return e.fontSize="3ch",-1!==e.fontSize.indexOf("ch' +
-        '")}catch(e){return!1}}function t(){return"performance"in e}function ' +
-        'a(){var n,r=e.crypto||e.msCrypto;if(r&&"getRandomValues"in r&&"Uint3' +
-        '2Array"in e){var t=new Uint32Array(10),a=r.getRandomValues(t);n=a&&"' +
-        'number"==typeof a[0]}return!!n}var o=n.documentElement.className;o=o' +
-        '.replace("ua-no-js","ua-js"),t()&&a()&&r()?o+=" ua-modern":o+=" ua-n' +
-        'o-modern",n.documentElement.className=o}(window,document);',
-        '/* beautify preserve:end */',
-      ], true);
-  });
+    bh.match('page__ua', function(ctx) {
+        ctx.bem(false)
+            .tag('script')
+            .attr('data-skip-moving', 'true')
+            .content([
+                `/* beautify preserve:start */
+                !function(e,n){function r(){var e={elem:n.createElement("modernizr")}.elem.style;try{return e.fontSize="3ch",-1!==e.fontSize.indexOf("ch")}catch(e){return!1}}function t(){var n,r=e.crypto||e.msCrypto;if(r&&"getRandomValues"in r&&"Uint32Array"in e){var t=new Uint32Array(10),a=r.getRandomValues(t);n=a&&"number"==typeof a[0]}return!!n}var a=n.documentElement.className;a=a.replace("ua-no-js","ua-js"),"performance"in e&&t()&&r()||navigator.platform&&/iPad|iPhone|iPod/.test(navigator.platform)&&Promise&&t()&&r()?a+=" ua-modern":a+=" ua-no-modern",n.documentElement.className=a}(window,document);
+                /* beautify preserve:end */`,
+            ], true);
+    });
 };
 
 // /**
@@ -52,6 +45,7 @@ module.exports = function(bh) {
 //     return 'performance' in window;
 //   }
 //
+//
 //   /**
 //    * Web Cryptography test
 //    *
@@ -84,7 +78,7 @@ module.exports = function(bh) {
 //
 //   /* ua-no-modern <-> ua-modern */
 //
-//   if (performanceSupport() && cryptoSupport() && csschunitSupport()) {
+//   if ((performanceSupport()  && cryptoSupport() && csschunitSupport()) || !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform) && !!Promise && cryptoSupport() && csschunitSupport()) {
 //     htmlClasses += ' ua-modern';
 //   } else {
 //     htmlClasses += ' ua-no-modern';
