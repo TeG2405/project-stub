@@ -258,7 +258,7 @@ module.exports = {
           {
             loader: '@intervolga/bembh-loader',
             options: {
-              client: true,
+              client: 'static', // true
               bhFilename: require.resolve('@intervolga/bh-ext'),
             },
           },
