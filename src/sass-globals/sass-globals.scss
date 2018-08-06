@@ -1,3 +1,8 @@
+$rem-baseline: 16px !default; // Дефолтный размер шрифта в котором был расчитан макет == 1rem
+@import "~sass-rem/rem";
+@import "variables";
 @import "~bootstrap/scss/functions";
+@import "functions";
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
+@import "mixins";
