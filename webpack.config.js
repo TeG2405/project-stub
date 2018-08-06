@@ -334,7 +334,7 @@ module.exports = {
     }),
     new ExtractTextPlugin({
       allChunks: true,
-      filename: 'assets/[name].css',
+      filename: '[name].css',
       disable: !isProd,
     }),
     ...bemJsonEntries.map((bemJsonName) => {
