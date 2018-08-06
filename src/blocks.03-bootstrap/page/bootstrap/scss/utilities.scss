@@ -1,0 +1,46 @@
+.d-landscape-none{
+  @media (orientation: landscape) {
+    display: none !important;
+  }
+}
+.d-portrait-none{
+  @media (orientation: portrait) {
+    display:  none !important;
+  }
+}
+.text-small {
+  font-size: $font-size-sm !important;
+}
+.text-large {
+  font-size: $font-size-lg !important;
+}
+.clear-left{
+  clear: left !important;
+}
+.clear-right{
+  clear: right !important;
+}
+.bg-transparent {
+  background-color: transparent !important;
+}
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    .clear#{$infix}-left {
+      clear: left !important;
+    }
+    .clear#{$infix}-right {
+      clear: right !important;
+    }
+    .text#{$infix}-small {
+      font-size: $font-size-sm !important;
+    }
+    .text#{$infix}-large {
+      font-size: $font-size-lg !important;
+    }
+    .bg#{$infix}-transparent {
+      background-color: transparent !important;
+    }
+  }
+}
+
