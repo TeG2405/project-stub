@@ -1,9 +1,5 @@
-({
-  shouldDeps: [
-    {
-      elems: [
-        'browsehappy', 'css', 'head', 'js', 'link', 'meta', 'noscript', 'ua',
-      ],
-    },
-  ],
-});
+module.exports = {
+    shouldDeps: [
+        {elem: ['alert', 'ua']},
+    ],
+};

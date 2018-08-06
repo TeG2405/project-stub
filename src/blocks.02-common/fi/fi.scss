@@ -1,0 +1,33 @@
+@import "variables";
+@font-face {
+  font-family: $icons-font-family;
+  font-weight: normal;
+  font-style: normal;
+  src:
+          url('#{$icons-font-folder}/#{$icons-font-family}.ttf') format('truetype'),
+          url('#{$icons-font-folder}/#{$icons-font-family}.woff') format('woff'),
+          url('#{$icons-font-folder}/#{$icons-font-family}.svg') format('svg');
+}
+.fi{
+  @include fi();
+}
+.fi_icon_stub{
+  &:before{
+    display: inline-block;
+    content: '';
+    width: 1em;
+    height: 1em;
+    border: 1px solid;
+    box-sizing: border-box;
+  }
+}
+@each $key, $value in $icons {
+  .fi_icon_#{$key} {
+    &:before{
+      content: $value;
+    }
+  }
+}
+
+
+
