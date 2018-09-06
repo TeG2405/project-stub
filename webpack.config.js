@@ -243,8 +243,9 @@ module.exports = {
                 ['@babel/preset-env', {
                   targets: {
                     browsers: pkg.browserslist,
-                    forceAllTransforms: isProd,
                   },
+                  forceAllTransforms: isProd,
+                  modules: 'cjs',
                   useBuiltIns: 'usage',
                 }],
               ],
@@ -289,8 +290,9 @@ module.exports = {
               ['@babel/preset-env', {
                 targets: {
                   browsers: pkg.browserslist,
-                  forceAllTransforms: isProd,
                 },
+                forceAllTransforms: isProd,
+                modules: 'cjs',
                 useBuiltIns: 'usage',
               }],
             ],
