@@ -1,0 +1,9 @@
+.rating {
+  line-height: 1;
+  white-space: nowrap;
+  font-size: 0;
+  margin: -$grid-gutter-width/6;
+  direction: rtl;
+  color: $gray-200;
+  display: inline-block;
+}
